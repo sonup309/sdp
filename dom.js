@@ -58,10 +58,20 @@ function filterItems(e){
   // Convert to an array
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    const Item=item.childNodes[1].textContent;
+    if(itemName.toLowerCase().indexOf(text) != -1 || Item.toLowerCase().indexOf(text) != -1){
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
     }
   });
+}
+function onsubmit(e){
+    e.preventDefault();
+    const input=document.getElementById(input).value;
+    const Item=document.getElementById(Item).value;
+    const newText=document.createTextNode(inputvalue)
+    const ItemNode=document.createTextNode(Item)
+    li.appendChild(newText);
+    li.appendChild(ItemNode);
 }
